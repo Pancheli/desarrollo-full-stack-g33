@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+.grid-container {
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    'navigation'
+    'search'
+    'main'
+    'footer';
+}
+
+nav {
+  width: 100%;
+  grid-area: navigation;
+  background: #03579c;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+nav .menu {
+  list-style: none;
+  display: none;
+  width: 100%;
+}
+
+nav .menu li {
+  cursor: pointer;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.logo i.car {
+  font-size: 25px;
+}
+
+.logo i.zap {
+  font-size: 10px;
+  padding-left: 8px;
+}
+
+.text {
+  display: flex;
+  align-items: center; 
+}
+
+button.open-menu {
+  background: #03579c;
+  border: none;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+header {
+  grid-area: search;
+  background: rgb(225, 221, 221);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+}
+
+select {
+  padding: 8px;
+  border-radius: 5px;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+article.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px 0;
+  box-shadow: 2px 2px 13px rgba(163, 163, 163, 0.6);
+  margin: 5% auto auto auto;
+}
+
+article.tablet {
+  display: none;
+}
+
+article.desktop {
+  display: none;
+}
+
+main .description p {
+  margin-bottom: 10px;
+}
+
+.img {
+  width: 90%;
+  height: 200px;
+  margin: auto;
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
+}
+
+button.btn {
+  background: #012f6b;
+  border: none;
+  padding: 9px 6px;
+  color: #fff;
+  border-radius: 6px;
+  width: 30%;
+  margin: 5px auto;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  margin: 10% auto;
+  color: #085bc7;
+}
+
+.pag,
+.prev,
+.next {
+  border: 1px solid #ccc;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.prev {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.next {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+footer {
+  grid-area: footer;
+  background: #012f6b;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 8px 0;
+}
+
+footer .footer {
+  padding: 20px;
+}
+
+footer .footer i {
+  font-size: 25px;
+  padding-bottom: 3px;
+  cursor: pointer;
+}
+
+footer .footer p {
+  font-weight: 500;
+  font-size: 22px;
+}
+
+/* tablet */
+@media (min-width: 576px) {
+  .grid-container {
+    grid-template-areas:
+      "navigation navigation"
+      "search main"
+      "footer footer";
+  }
+
+  nav {
+    padding: 10px 5px;
+  }
+
+  nav .brand .logo i:last-child {
+      padding-left: 0;
+  }
+
+  nav ul.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+  }
+
+  nav ul.menu li {
+    font-size: 13px;
+    margin: 0 15px;
+  }
+
+  button.open-menu {
+    display: none;
+  }
+
+  header {
+    justify-content: flex-start;
+  }
+
+  main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+  }
+
+  main article.mobile {
+    display: none;
+  }
+
+  main article.desktop {
+    display: none;
+  }
+
+  main article.tablet {
+    display: flex;
+  }
+
+  main .cars-items article .btn {
+    width: 70px;
+    height: 49px;
+  }
+
+  select {
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .pagination {
+    grid-column: span 2;
+  }
+
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-areas:
+      "navigation search"
+      "navigation main"      
+      "footer main";
+    grid-template-columns: 250px 2fr;
+    height: 100vh;
+    
+  }
+
+  nav,
+  footer {
+    height: 100%;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  nav .brand {
+    padding-top: 10px;
+  }
+
+  nav ul.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 25px;
+    margin: 20px;
+    gap: 15px;    
+  }
+
+  header {
+    width: 100%;
+  }
+
+  main {    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 100%;
+  }
+
+  main article.mobile {
+    display: none;  
+  }
+
+  main article.tablet {
+    display: none;
+  }
+  
+  main article.desktop {
+    display: flex;
+  }
+
+
+  button.open-menu {
+    display: none;
+  }
+
+  .pagination {
+    grid-column: span 4;
+  }
+}

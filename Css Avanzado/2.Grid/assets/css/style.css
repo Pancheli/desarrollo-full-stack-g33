@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ccc;
+    font-family: 'Roboto', sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: "header header" "sidebar main" "footer footer";
+    gap: 10px;
+}
+
+.header {
+    grid-area: header;
+    background: rgb(42, 82, 122);
+    text-align: center;
+    color: #fff;
+    padding: 1.5em 0;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+}
+
+.sidebar h3 {
+    margin-bottom: 10px;
+}
+
+.sidebar p {
+    line-height: 2rem;
+    cursor: pointer;
+}
+
+.sidebar p span {
+    color: rgba(85, 85, 85, 0.377);
+}
+
+.main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    margin-right: 5%;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    width: 100%;
+    height: 430px;
+}
+
+.product .imagen {
+    width: 100%;
+    height: 60%;
+}
+
+.product .imagen img {
+    width: 100%;
+    height: 100%;
+}
+
+.product .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 100%;
+    height: 30%;
+}
+
+.product .details p {
+    font-weight: 300;
+}
+
+.product #last {
+    padding-top: 25px;
+}
+
+.product button {
+    display: block;
+    width: 100%;
+    background: rgb(42, 82, 122);
+    color: #fff;
+    padding: 0.8em 0;
+    cursor: pointer;
+}
+
+footer {
+    grid-area: footer;
+    background: #fff;
+    text-align: center;
+    padding: 1.2em 0;
+}
