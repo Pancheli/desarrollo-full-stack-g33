@@ -1,0 +1,12 @@
+{
+  "name": "desafiosass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sw": "sass -w scss/custom_bootstrap.scss:assets/css/bootstrap.css --style compressed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

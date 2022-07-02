@@ -1,0 +1,40 @@
+// Definir colores
+$pink:       #f8c;
+$primary:    #070eee;
+$secondary:  #e12626;
+$dark:       #000;
+$ligth:       #fff;
+
+
+
+// Modificar fuentes de css
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+$font-family-sans-serif:     'Kaushan Script', cursive;
+
+
+// Usando @extend para reutilizar estilos de una clase a otra
+.card {
+    @extend .bg-dark;
+    @extend .text-pink;
+    i.fa-brands {
+        @extend .text-pink;
+    }
+    a {
+        text-decoration: none;
+    }    
+}
+
+
+
+
+
+// Crear una variante de color e integrarlo como themes de bs
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary, 
+  "pink":       $pink,
+  "dark":       $dark,
+  "light":      $ligth
+) !default;
+
+@import 'bootstrap';
